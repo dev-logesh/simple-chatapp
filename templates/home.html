@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title %}LG ChatApp {% endblock title %}
+{% block body %}
+
+<style>
+    #create_room,
+    #head {
+        text-decoration: none;
+        color: black;
+    }
+
+    #room_div {
+        padding-top: 0%;
+        padding-bottom: 0%;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    #room_div,
+    #create_room {
+        margin: 0 0.3rem 0.3rem 0.3rem;
+    }
+</style>
+
+
+<script type="text/javascript">
+
+    $(document).on('submit', '#post-form', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/',
+            data: {
+                username: $('#username').val(),
+                room_name: $('#room_name').val(),
+                phone: $('#phone').val(),
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function (data) {
+                if (data == "0") {
+                    sweetAlert("Blocked!", "<b>You are <b style='color:red';>Blocked By Room Owner</b> Contact Room Owner To Unblock..!</b>", "warning");
+                }
+                else if (data == "1") {
+                    sweetAlert("Error!", "<b>Room <b style='color:red';>Does Not Exists..!</b> Please Create <b style='color:green';>New Room</b>", "error");
+                }
+                else {
+                    window.location = data;
+                }
+            }
+        });
+
+    });
+
+
+    //  <!-- ----------------scripts for Finding room ajax request------------------- -->
+
+    
+    $(document).on('submit', '#find_room_form', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/find_room',
+            data: {
+                phone: $('#phone').val(),
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function (data) {
+                console.log(data);
+                for (var key in data.room) {
+                     console.log(response.room[key].phone);
+                }
+            }
+        });
+    });
+
+
+</script>
+  
+
+<div align="center" style="background:rgb(65 155 60 / 0.89);">
+    <a id='head' href="/">
+        <h2>LOGI ChatApp </h2>
+    </a>
+</div>
+<div align="center" class="container">
+    <form id="post-form">
+        {% csrf_token %}
+        <div id="room_div"> <a style="background: #059e9eb0" id='create_room' href="/create_room"><b>Create Room</b></a>
+         <a style="background: #d303ebbf;" id='create_room' href="/find_room"><b>Find Room</b></a>
+    </form>
+
+    <style>
+
+        .container{
+            max-width: 500px;
+            margin: auto;
+        }
+    </style>
+
+{% endblock body %}
