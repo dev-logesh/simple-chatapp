@@ -26,7 +26,8 @@ SECRET_KEY = 'cvge4mb8qqaf$k!i9x51keq%xalrbu4x6pz4k9%6%x@k#amh8t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+# settings.py
+ALLOWED_HOSTS = ['logi-chatapp.herokuapp.com']
 
 
 # Application definition
@@ -127,7 +128,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
-# settings.py
-ALLOWED_HOSTS = ['logi-chatapp.herokuapp.com']
+
 
 django_heroku.settings(locals())
