@@ -1,5 +1,4 @@
-release: python manage.py migrate
-web: python manage.py runserver
-web: gunicorn djangochatapp.wsgi
+web: daphne djangochatapp.wsgi.application --port $PORT --bind 0.0.0.0 -v2
+chatworker: python manage.py runworker --settings=djangochatapp.settings -v2
 
 
