@@ -128,6 +128,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 # settings.py
-ALLOWED_HOSTS = ['https://logi-chatapp.herokuapp.com/']
+ALLOWED_HOSTS = ['logi-chatapp.herokuapp.com/']
 
 django_heroku.settings(locals())
