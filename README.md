@@ -8,7 +8,7 @@
     Hello from the other side
     <br />
     <br />
-    <a href="https://github.com/LOGI-LAB/Django-ChatApp/issues">Report Bug</a>
+    <a href="https://github.com/dev-logesh/simple-chatapp/issues">Report Bug</a>
   </p>
 </p>
 
@@ -31,8 +31,8 @@ Demo:
 ## Setup 🛠
 1. Clone or download the repository  
 ```bash
-$ git clone https://github.com/LOGI-LAB/Django-ChatApp.git
-$ cd Django-ChatApp
+$ git clone https://github.com/dev-logesh/simple-chatapp.git
+$ cd simple-chatapp
 ```
 2. Create and activate virtual environment
 ```bash
@@ -105,4 +105,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ### Credits:
 
-[LOGI-LAB](https://github.com/logi-lab)
+[LOGI-LAB](https://github.com/dev-logesh)
