@@ -16,9 +16,6 @@
 
 A simple chat application that covers Django authorization, web sockets and authentication.
 
-Demo:  
-
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
 
 
 ### Features ⭐
@@ -103,6 +100,3 @@ The first and second approaches are covered in this application, look `session-b
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-### Credits:
-
-[LOGI-LAB](https://github.com/dev-logesh)
